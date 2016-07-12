@@ -1,3 +1,53 @@
+
+/*Empty boxes for the learned and not learned sections. */
+
+    ul.dinoNamesLearned{
+      list-style-type: none;
+      font-size: 35px;
+      background-color: #8E8A31;
+      padding: 0px;
+      height: 400px;
+    }
+
+    ul.dinoNamesNotLearned{
+      list-style-type: none;
+      font-size: 35px;
+      background-color: #8E8A31;
+      padding: 0px;
+    }
+
+
+/*titles for learned and not learned sections:*/
+
+    p.notLearned {
+      background-color: #F5EE52;
+      font-family: "Comic Sans MS", cursive, sans-serif;
+      font-size: 40px;
+      display: inline-block;
+      margin: 0px;
+      padding: 20px 50px 20px 50px;
+      height: 60px;
+    }
+
+    p.learned {
+      background-color: #F5EE52;
+      font-family: "Comic Sans MS", cursive, sans-serif;
+      font-size: 40px;
+      display: inline-block;
+      margin: 0px;
+      padding: 20px 50px 20px 50px;
+      height: 60px;
+    }
+
+/*trying to get the dino names to display as a column list. */
+#listItems {
+  /*list-style-type: none;*/
+  font-size: 35px;
+  background-color: #8E8A31;
+  padding: 0px;
+  display: column;
+}
+
 body {
 background-color: #FD5F3D;
 text-align: center;
@@ -17,52 +67,59 @@ h1.title {
 div.flex {
   display: flex;
   justify-content: space-around;
-}
-
-p.notLearned {
-  background-color: #F5EE52;
-  font-family: "Comic Sans MS", cursive, sans-serif;
-  font-size: 40px;
-  display: inline-block;
-  margin: 0px;
-  padding: 20px 70px 20px 70px;
-  height: 60px;
+  flex-direction: row;
 }
 
 
-/*trying to get the dino names to display as a column list. */
-#listItems {
-  /*list-style-type: none;*/
-  font-size: 35px;
-  background-color: #8E8A31;
-  padding: 0px;
-  display: column;
-}
+/*front and back of cards:*/
+    /*Trex design*/
+    div.trexcardFront {
+      background-color: white;
+      border: solid;
+      height: 400px;
+      width: 600px;
+      font-size: 30px;
+      text-align: center;
+    }
+
+    div.trexcardBack {
+      background-color: white;
+      border: solid;
+      height: 400px;
+      width: 600px;
+      font-size: 30px;
+      text-align: center;
+    }
+
+    /*velo design*/
+    div.velocardFront {
+      background-color: white;
+      border: solid;
+      height: 400px;
+      width: 600px;
+      font-size: 30px;
+      text-align: center;
+    }
+
+    div.velocardBack {
+      background-color: white;
+      border: solid;
+      height: 400px;
+      width: 600px;
+      font-size: 30px;
+      text-align: center;
+    }
 
 
-div.flashCard {
-  background-color: white;
-  border: solid;
-  height: 600px;
-  width: 800px;
-  font-size: 30px;
-  text-align: center;
-}
 
-div.cardBack {
-  background-color: white;
-  border: solid;
-  height: 600px;
-  width: 800px;
-  font-size: 30px;
-  text-align: center;
-}
 
 img{
-  height: 200px;
+  height: 100px;
 }
 
-ul.multipleChoice {
+/*flash card details:*/
+
+ul.multipleChoice1 {
   list-style-type: none;
   display: inline-block;
   text-align: center;
@@ -70,53 +127,13 @@ ul.multipleChoice {
   justify-content: center;
 }
 
-li.option1 {
+li.option {
   border: solid;
   border-style: outset;
   color: grey;
 }
 
-li.option2 {
-  border: solid;
-  border-style: outset;
-  color: grey;
-}
 
-li.option3 {
-  border: solid;
-  border-style: outset;
-  color: grey;
-}
-
-li.option4 {
-  border: solid;
-  border-style: outset;
-  color: grey;
-}
-
-p.learned {
-  background-color: #F5EE52;
-  font-family: "Comic Sans MS", cursive, sans-serif;
-  font-size: 40px;
-  display: inline-block;
-  margin: 0px;
-  padding: 20px 50px 20px 50px;
-  height: 60px;
-}
-
-ul.dinoNamesLearned{
-  list-style-type: none;
-  font-size: 35px;
-  background-color: #8E8A31;
-  padding: 0px;
-}
-
-ul.dinoNamesNotLearned{
-  list-style-type: none;
-  font-size: 35px;
-  background-color: #8E8A31;
-  padding: 0px;
-}
 /*trying to figure out how to make it transfer to columns after a certain point
 @media only screen and (max-width: 1000px) {
     body {

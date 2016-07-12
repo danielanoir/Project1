@@ -1,69 +1,224 @@
 $(document).ready(function(){
-console.log("JQuery is working.");
+  console.log("JQuery is working.");
 
-// first variable dinoNamesList is being pulled from HTML
-// Created string of dino names instead of just referencing from HTML so I can append from JS.
-var dinoNamesList = $("ul.dinoNamesNotLearned li")
-var dinoNamesForEdits = ["Tyrannosaurus rex", "Velociraptor", "Allosaurus", "Spinosaurus", "Deinonychus", "Carnotaurus", "Apatosaurus", "Diplodocus", "Brachiosaurus", "Stegosaurus", "Ankylosaurus", "Triceratops", "Iguandon", "Parasaurolophus"]
-
-
-console.log(dinoNamesForEdits);
-//created a for loop. var i (i.e instance) is the starting point of the for loop.
-// i < dinoNames.length defins the conditions for the for loop (i must be less than the length of the dinoNames)
-//dinoNames.length needs to be more than the instance
-// Increase value (i++) each time code block in the loop has been executed.
-//dinoNames.eq(i) is basically calling the dinoNames. It's equivelant to dinoNames[]
-for (var i = 0; i < dinoNamesForEdits.length; i++) {
-//need to add the string so that it runs the names and not just the number.
-  console.log(dinoNamesForEdits[i]);
-}
+  // first variable dinoNamesList is being pulled from HTML
+  // Created string of dino names instead of just referencing from HTML so I can append from JS.
+  var dinoNamesList = $("ul.dinoNamesNotLearned li")
+  var dinoNamesForEdits = ["Tyrannosaurus rex", "Velociraptor", "Allosaurus", "Spinosaurus", "Deinonychus", "Carnotaurus", "Apatosaurus", "Diplodocus", "Brachiosaurus", "Stegosaurus", "Ankylosaurus", "Triceratops", "Iguandon", "Parasaurolophus"]
 
 
+  $("h1").on("click", function(){
+  $(".dinoNamesNotLearned").append([dinoNamesForEdits]);
+  })
 
-$(".cardBack").hide();
+  var memorized = []
 
-$( ".multipleChoice" ).click(function() {
-  var input = prompt("please type A or B");
-  if (input == "A"){
-    alert("You got it!");
-    $(".cardBack").show();
-    $(".flashCard").hide();
-    //flip card to show details
-  } else {
-    alert("Sorry, that is incorrect.");
-    $(".cardBack").show();
-    $(".flashCard").hide();
-    //flip card to show details
+//dinoDetails are objects in array with details on each of the dinos. Refering to it in if else.
+  var dinoDetails = [
+    {
+      name: "Tyrannosaurus rex",
+      question: "What is the correct answer?",
+      correctAnswer: "A"
+    },
+    {
+      name: "Velociraptor",
+      question: "What is the correct answer?",
+      correctAnswer: "D"
+    },
+    {
+      name: "Allosaurus",
+      question: "What is the correct answer?",
+      correctAnswer: "C"
+    },
+    {
+      name: "Spinosaurus",
+      question: "What is the correct answer?",
+      correctAnswer: "C"
+    },
+    {
+      name: "Deinonychus",
+      question: "What is the correct answer?",
+      correctAnswer: "A"
+    },
+    {
+      name: "Carnotaurus",
+      question: "What is the correct answer?",
+      correctAnswer: "D"
+    },
+    {
+      name: "Apatosaurus",
+      question: "What is the correct answer?",
+      correctAnswer: "D"
+    },
+    {
+      name: "Diplodocus",
+      question: "What is the correct answer?",
+      correctAnswer: "C"
+    },
+    {
+      name: "Brachiosaurus",
+      question: "What is the correct answer?",
+      correctAnswer: "B"
+    },
+    {
+      name: "Stegosaurus",
+      question: "What is the correct answer?",
+      correctAnswer: "A"
+    },
+    {
+      name: "Ankylosaurus",
+      question: "What is the correct answer?",
+      correctAnswer: "B"
+    },
+    {
+      name: "Triceratops",
+      question: "What is the correct answer?",
+      correctAnswer: "B"
+    },
+    {
+      name: "Iguandon",
+      question: "What is the correct answer?",
+      correctAnswer: "C"
+    },
+    {
+      name: "Parasaurolophus",
+      question: "What is the correct answer?",
+      correctAnswer: "D"
+    },
+
+  ]
+
+  dinoDetails[0].name
+  dinoDetails[0].correctAnswers
+  dinoDetails[1].correctAnswer
+
+
+  //created a for loop. var i (i.e instance) is the starting point of the for loop.
+  // i < dinoNames.length defins the conditions for the for loop (i must be less than the length of the dinoNames)
+  //dinoNames.length needs to be more than the instance
+  // Increase value (i++) each time code block in the loop has been executed.
+  //dinoNames.eq(i) is basically calling the dinoNames. It's equivelant to dinoNames[]
+  console.log(dinoNamesForEdits);
+  for (var i = 0; i < dinoNamesForEdits.length; i++) {
+    console.log(dinoNamesForEdits[i]);
   }
 
+
+
+  $(".trexcardBack").hide();
+  $(".option").click(function() {
+    console.log( input );
+    var input = $(this).html();
+    if (input == dinoDetails[0].correctAnswer) {
+      alert("You got it!");
+      $(".trexcardBack").show();
+      $(".trexcardFront").hide();
+      //flip card to show details
+    } else {
+      alert("Sorry, that is incorrect.");
+      // $(".trexcardBack").show();
+      // $(".trexcardFront").hide();
+      //flip card to show details
+    }
+  });
+
+
+      $(".velocardBack").hide();
+      $(".option").click(function() {
+        console.log( input );
+        var input = $(this).html();
+        if (input == dinoDetails[0].correctAnswer) {
+          alert("You got it!");
+          $(".velocardBack").show();
+          $(".velocardFront").hide();
+        } else {
+          alert("Sorry, that is incorrect.");
+        }
+  });
 });
 
-
-
-});
-
- // create array of strings, each a dino name, so that I can write HTML from javascript (so we can append it to the html).
-//  var allTheDinos = ["Tyrannosaurus rex", "Velociraptor", "Allosaurus", "Spinosaurus", "Deinonychus", "Carnotaurus", "Apatosaurus", "Diplodocus", "Brachiosaurus", "Stegosaurus", "Ankylosaurus", "Triceratops", "Iguandon", "Parasaurolophus"];
-// console.log(allTheDinos[0]);
-
-// $(".dinoNamesNotLearned").append(["Tyrannosaurus rex", "Velociraptor", "Allosaurus", "Spinosaurus", "Deinonychus,", "Carnotaurus", "Apatosaurus", "Diplodocus", "Brachiosaurus", "Stegosaurus", "Ankylosaurus", "Triceratops", "Iguandon", "Parasaurolophus"]);
-
-  //first, make it so the for loop posts the flash card with the dinasaurs name
-  //create for loop within each arrays string that goes through each multiple choice
-
-
-
-// PSUEDO:
-//
-// All dino names are in learning section to start as arrays
-// use for loops to go through array.
-// create 4 buttons on each flashcard with multiple choice answers onclick.
-// If user clicks on correct button, alert saying "You got it!"
-//   then, card flips to show name and details of dino
-//        need to have a card back
-//        also, name of dino goes to memorized section
-// Else user selects wrong answer, alert saying "Sorry, try again"
-//   then, card flips to show name and details of dino
-//   also, name of dino stays in learning section
-//
-//
+    // $(".").hide();
+    // $(".").click(function() {
+    //   var input = $(this).html();
+    //   console.log( input );
+    //   if (input == dinoDetails[0].correctAnswer) {
+    //     alert("You got it!");
+    //     $(".").show();
+    //     $(".").hide();
+    //   } else {
+    //     alert("Sorry, that is incorrect.");
+    //   });
+    //
+    //   $(".").hide();
+    //   $(".").click(function() {
+    //     var input = $(this).html();
+    //     console.log( input );
+    //     if (input == dinoDetails[0].correctAnswer) {
+    //       alert("You got it!");
+    //       $(".").show();
+    //       $(".").hide();
+    //     } else {
+    //       alert("Sorry, that is incorrect.");
+    //     });
+    //
+    //     $(".").hide();
+    //     $(".").click(function() {
+    //       var input = $(this).html();
+    //       console.log( input );
+    //       if (input == dinoDetails[0].correctAnswer) {
+    //         alert("You got it!");
+    //         $(".").show();
+    //         $(".").hide();
+    //       } else {
+    //         alert("Sorry, that is incorrect.");
+    //       });
+    //
+    //       $(".").hide();
+    //       $(".").click(function() {
+    //         var input = $(this).html();
+    //         console.log( input );
+    //         if (input == dinoDetails[0].correctAnswer) {
+    //           alert("You got it!");
+    //           $(".").show();
+    //           $(".").hide();
+    //         } else {
+    //           alert("Sorry, that is incorrect.");
+    //         });
+    //
+    //         $(".").hide();
+    //         $(".").click(function() {
+    //           var input = $(this).html();
+    //           console.log( input );
+    //           if (input == dinoDetails[0].correctAnswer) {
+    //             alert("You got it!");
+    //             $(".").show();
+    //             $(".").hide();
+    //           } else {
+    //             alert("Sorry, that is incorrect.");
+    //           });
+    //
+    //           $(".").hide();
+    //           $(".").click(function() {
+    //             var input = $(this).html();
+    //             console.log( input );
+    //             if (input == dinoDetails[0].correctAnswer) {
+    //               alert("You got it!");
+    //               $(".").show();
+    //               $(".").hide();
+    //             } else {
+    //               alert("Sorry, that is incorrect.");
+    //             });
+    //
+    //             $(".").hide();
+    //             $(".").click(function() {
+    //               var input = $(this).html();
+    //               console.log( input );
+    //               if (input == dinoDetails[0].correctAnswer) {
+    //                 alert("You got it!");
+    //                 $(".").show();
+    //                 $(".").hide();
+    //               } else {
+    //                 alert("Sorry, that is incorrect.");
+    //               });
+    //
+    //
