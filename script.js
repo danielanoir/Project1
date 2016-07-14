@@ -2,60 +2,59 @@ $(document).ready(function(){
   console.log("JQuery is working.");
 
 
-  $(".dinoNamesNotLearned").css({"width":"275px","font-size":"30px","font-family":"'Comic Sans MS', cursive, sans-serif","background":"rgba(18, 27, 38, 0.4)"});
-  $(".dinoNamesLearned").css({"font-size":"30px","font-family":"'Comic Sans MS', cursive, sans-serif","background":"rgba(18, 27, 38, 0.4)"});
-  $(".memorizedButton").css({"border-style":"outset","font-weight":"bold","color":"black","font-size":"40px","font-family":"'Comic Sans MS', cursive, sans-serif","background-color":"#ddbd3e","border-color":"grey","margin":"20px","padding":"10px"});
+  $(".dinoNamesNotLearned").css({"width":"275px","font-size":"30px","font-family":"'Trocchi', serif","background":"rgba(18, 27, 38, 0.4)"});
+  $(".dinoNamesLearned").css({"font-size":"30px","font-family":"'Trocchi', serif","background":"rgba(18, 27, 38, 0.4)"});
+  $(".memorizedButton").css({"border-style":"outset","font-weight":"bold","color":"black","font-size":"30px","font-family":"'Trocchi', serif","background-color":"grey","border-color":"grey","margin":"20px","padding":"10px"});
 
 //dinoDetails are objects in array with details on each of the dinos. Refering to it in if else.
 //Dynamic data goes below for each card. Static is in HTML
   var dinoCards = [
     {
-      name: "Tyrannosaurus rex",
-      question: "What is the correct answer?",
-      correctAnswer: "A",
-      options:[],
+      name: "Tyrannosaurus Rex",
+      question: "What did they eat?",
+      correctAnswer: "The Tyrannosaurus Rex ate meat. They also weighed 8 tons and they were up to 40 feet long." + "</br>" + "</br>" + "The largest T-Rex tooth found was 12 inches long.",
       img: "trex.jpg"
     },
     {
       name: "Velociraptor",
-      question: "What is the correct answer?",
-      correctAnswer: "D",
+      question: "In what period did the Velociraptor exist?",
+      correctAnswer: "In the Cretaceous Period, which was about 73 million years ago."+ "</br>" + "</br>" +"Velociraptor's were about the size of a turkey.",
       img: "velociraptor.jpg"
     },
     {
       name: "Allosaurus",
-      question: "What is the correct answer?",
-      correctAnswer: "C",
+      question: "Where in the world were the Allosaurus?",
+      correctAnswer: "Allosaurus fossils have been mostly found in the western United States."+ "</br>" + "</br>" + "Allosaurus dinosaurs were meat eaters and had teeth with edges like saws.",
       img: "allosaurus.jpg"
     },
     {
       name: "Spinosaurus",
-      question: "What is the correct answer?",
-      correctAnswer: "C",
+      question: "Where in the world did the Spinosaurus live?",
+      correctAnswer: "The Spinosaurus lived in North Africa." + "</br>" + "</br>" + "The Spinosaurus may have been the largest meat eater.",
       img: "spinosaurus.jpg"
     },
     {
       name: "Deinonychus",
-      question: "What is the correct answer?",
-      correctAnswer: "A",
+      question: "What does the name Deinonychus mean?",
+      correctAnswer: "Deinonychus means terrible claw and it refers to the hooked claw found on their hind feet.",
       img: "deinonychus.jpg"
     },
     {
       name: "Apatosaurus",
-      question: "What is the correct answer?",
-      correctAnswer: "D",
+      question: "What is another common name for Apatosaurus?",
+      correctAnswer: "Brontosaurus. They had long tales that counter balanced their long necks.",
       img: "apatosaurus.jpg"
     },
     {
       name: "Diplodocus",
-      question: "What is the correct answer?",
-      correctAnswer: "C",
+      question: "In what period did the Diplodocus live?",
+      correctAnswer: "The Jurassic Period about 150 million years ago." + "</br>" + "</br>" + "Diplodocus had a long tail which contained around 80 vertebrae.",
       img: "diplodocus.jpg"
     },
     {
       name: "Brachiosaurus",
-      question: "What is the correct answer?",
-      correctAnswer: "B",
+      question: "Where were the first fossils found?",
+      correctAnswer: "The first fossils were found in the Colorado River." + "</br>" + "</br>" + "The weight of Brachiosaurus has been estimated between 30 and 45 metric tons.",
       img: "brachiosaurus.jpg"
     },
     {
@@ -131,7 +130,7 @@ $(document).ready(function(){
 
   $(".memorizedButton").click(function() {
     if ($(".cardFront h1").text() === dinoCards[0].name) {
-      $(".dinoNamesLearned").append("<p>Tyrannosaurus rex</p>")
+      $(".dinoNamesLearned").append("<p>Tyrannosaurus Rex</p>")
       $("dinosaur").attr("data-dino-index").remove();
     }
   })
