@@ -1,7 +1,6 @@
 $(document).ready(function(){
   console.log("JQuery is working.");
 
-
   $(".dinoNamesNotLearned").css({"width":"275px","font-size":"30px","font-family":"'Trocchi', serif","background":"rgba(18, 27, 38, 0.4)"});
   $(".dinoNamesLearned").css({"font-size":"30px","font-family":"'Trocchi', serif","background":"rgba(18, 27, 38, 0.4)"});
   $(".memorizedButton").css({"border-style":"outset","font-weight":"bold","color":"black","font-size":"30px","font-family":"'Trocchi', serif","background-color":"grey","border-color":"grey","margin":"20px","padding":"10px"});
@@ -90,12 +89,9 @@ $(document).ready(function(){
 
   ]
 
-  //created a for loop. var i (i.e instance) is the starting point of the for loop.
-  // i < dinoNames.length defins the conditions for the for loop (i must be less than the length of the dinoNames)
-  //dinoNames.length needs to be more than the instance
-  // Increase value (i++) each time code block in the loop has been executed.
-  // added the array of dino names to the dino names not learned section using append, and then added a space in between each.
 
+  //created a for loop. var i (i.e instance) is the starting point of the for loop.
+  // Increase value (i++) each time code block in the loop has been executed.
   for (var i = 0; i < dinoCards.length; i++) {
     // set the data-dino-index to the same value taht we are looping through. i represents incrementing value in loop.
     var paraTags = $("<p class='dinosaur' data-dino-index='" + i + "'></p>")
@@ -108,6 +104,7 @@ $(document).ready(function(){
     $(".cardFront").html("<h1 class='heading'>"+ IthefunctionExpectParameter.name +"</h1>" + "<p class='question'>" + IthefunctionExpectParameter.question + "</p>" + "<img class='animals' src='" + IthefunctionExpectParameter.img + "'>" + "<p>Click card to learn...</p>")
     $(".cardBack").html("<h1 class='answer'>"+ IthefunctionExpectParameter.correctAnswer +"</h1>")
   }
+
 
 var dinoIndex = new Number;
 
@@ -125,7 +122,6 @@ var dinoIndex = new Number;
     })
 //function created to flip the card and shw the answer:
 $(document).ready(function() {
-
   $('.flashCard').on('click', function() {
     $('.flashCard').toggleClass('flipped');
   });
