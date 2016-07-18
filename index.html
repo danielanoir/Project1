@@ -1,18 +1,20 @@
-<!-- psuedo -->
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <title>Document</title>
   <link rel="stylesheet" type="text/css" href="style.css">
+  <link href='https://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Trocchi' rel='stylesheet' type='text/css'>
 <!-- links to js -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script src="script.js"></script>
 
+</script>
 </head>
 <body>
-  <h1 class=title>Learn about the Dino!</h1>
 
+  <h1 class=title>Dinosaur Lessons</h1>
 <div class="flex">
 
   <ul class="dinoNamesNotLearned">
@@ -22,14 +24,16 @@
   <div class="stage">
     <div class="flashCard">
     <div class="cardFront">
-      <p>Front</p>
+      <p class="getStarted">Click on a dinosaur's name to get started!</p>
     </div>
     <div class="cardBack">
-      <p>Back</p>
+      <p>Oops... you didn't click a dinosaur's name first.
+        <img class="grumpydino" src="grumpydino.jpg" alt="grumpy dino" height="300">
+      </p>
     </div>
   </div>
   <!-- button under card:  -->
-  <button class="memorizedButton">I memorized this.</button>
+  <button class="memorizedButton">SEND TO MEMORIZED</>
 
   </div>
 
