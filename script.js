@@ -1,12 +1,20 @@
+/// James' comments will have 3 slashes
+/// Overall, you've overcome significant obstacles in getting the project this far!
+/// I want congratulate you on your successes and also suggest areas to impove.
+/// Please see the comments below for suggestions! 
+
 $(document).ready(function(){
   console.log("JQuery is working.");
 
+  /// I would just add this css code to the css, rather than adding it with jQuery
   $(".dinoNamesNotLearned").css({"width":"275px","font-size":"30px","font-family":"'Trocchi', serif","background":"rgba(18, 27, 38, 0.4)"});
   $(".dinoNamesLearned").css({"font-size":"30px","font-family":"'Trocchi', serif","background":"rgba(18, 27, 38, 0.4)"});
   $(".memorizedButton").css({"border-style":"outset","font-weight":"bold","color":"black","font-size":"30px","font-family":"'Trocchi', serif","background-color":"grey","border-color":"grey","margin":"20px","padding":"10px"});
 
 //dinoDetails are objects in array with details on each of the dinos. Refering to it in if else.
 //Dynamic data goes below for each card. Static is in HTML
+
+///Excellent use of a data structure (an array of objects) to store all your project's data
   var dinoCards = [
     {
       name: "Tyrannosaurus Rex",
@@ -85,8 +93,8 @@ $(document).ready(function(){
       question: "What is the correct answer?",
       correctAnswer: "D",
       img: "parasaurolophus.jpg"
+/// I'd remove this trailing comma below
     },
-
   ]
 
 
@@ -100,15 +108,20 @@ $(document).ready(function(){
   }
 
   //adding the object to the card front and back so that it shows info:
+  ///I would change the IthefunctionExpectParameter to something shorter-- think about what the purpose of the parameter that you are passing in here
+
+  ///awesome use of the data structure you defined earlier
   function changeCard(IthefunctionExpectParameter) {
     $(".cardFront").html("<h1 class='heading'>"+ IthefunctionExpectParameter.name +"</h1>" + "<p class='question'>" + IthefunctionExpectParameter.question + "</p>" + "<img class='animals' src='" + IthefunctionExpectParameter.img + "'>" + "<p>Click card to learn...</p>")
     $(".cardBack").html("<h1 class='answer'>"+ IthefunctionExpectParameter.correctAnswer +"</h1>")
   }
 
-
+/// This is functionally equivalent to var dinoIndex = 0
 var dinoIndex = new Number;
 
 //created function that clicks on the name of the dinosaur
+
+/// good comment, but i would change "clicks" to "responds to click events"
   $("p.dinosaur").click(function (){
     console.log("dino clicked")
     dinoIndex = $(this).attr("data-dino-index")
@@ -118,9 +131,17 @@ var dinoIndex = new Number;
 
   $(".memorizedButton").click(function() {
       $(".dinoNamesLearned").append("<p>" + dinoCards[dinoIndex].name + "</p>")
+
+    /// Did you have the code below working when you presented?
+    /// Since you've created a custom HTML attribute called "data-dino-index" whose values  correspond your dino ids, you can leverage that to append/remove or hide/show different dinosaurs
+
       // $("dinosaur").attr("data-dino-index").remove();
     })
+
+
 //function created to flip the card and shw the answer:
+
+/// since you're already inside of a document ready method i would take out this one
 $(document).ready(function() {
   $('.flashCard').on('click', function() {
     $('.flashCard').toggleClass('flipped');
